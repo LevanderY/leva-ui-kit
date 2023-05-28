@@ -1,4 +1,4 @@
-import { memo, MouseEvent, ReactNode } from 'react';
+import React, { memo, MouseEvent, ReactNode } from 'react';
 import { TStyleColorButton, TStyleSizeButton, TStyleVariantButton, TStyleTypeButton } from './types';
 import classNames from 'classnames';
 

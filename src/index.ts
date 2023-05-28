@@ -1,7 +1,5 @@
-import { Button, Input, CheckBox } from "../src/components";
+import { Button } from "../src/components";
 
 export {
   Button,
-  Input,
-  CheckBox,
 }
