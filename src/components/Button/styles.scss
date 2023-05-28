@@ -1,0 +1,128 @@
+@import "../../styles/global.scss";
+
+.btn {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.15s ease-out;
+  display: inline-block;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+
+  @mixin btn_color($border-color, $bg-color, $hover-bg-color, $shadow-color) {
+    background-color: $bg-color;
+    border-color: $border-color;
+    color: $white;
+
+    &:hover {
+      background-color: $hover-bg-color;
+      border-color: $hover-bg-color;
+    }
+
+    &.white {
+      background-color: $white-bg;
+      border: none;
+      color: $dark;
+
+      &:hover {
+        -webkit-box-shadow: 0px 0px 2px 3px $shadow-color;
+        box-shadow: 0px 0px 2px 3px $shadow-color;
+        color: $dark-grey;
+      }
+    }
+
+    &.light-grey {
+      background-color: $light-grey-bg;
+      color: $light-grey;
+      border: 1px solid $input-border-color;
+
+      &:hover {
+        background-color: $light-grey-hover;
+        border: 1px solid $input-border-color;
+      }
+    }
+  }
+
+  &.btn_color.orange {
+    @include btn_color($orange-bg, $orange-bg, $orange-hover, $white);
+  }
+
+  &.btn_color.grey {
+    @include btn_color($grey-bg, $grey-bg, $grey-hover, $white);
+  }
+
+  &.btn_color.light-grey {
+    @include btn_color(1px solid $input-border-color,
+      $light-grey-bg,
+      $light-grey-hover,
+      none);
+  }
+
+  &.btn_color.white {
+    @include btn_color(auto, auto, auto, $white-hover-border);
+  }
+
+  @mixin btn_size($padding, $font-size, $line-height, $font-weight: normal) {
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+  }
+
+  &.btn_size.xs {
+    @include btn_size(5px 12px, 12px, 14px);
+  }
+
+  &.btn_size.sm {
+    @include btn_size(8px 16px, 12px, 14px);
+  }
+
+  &.btn_size.md {
+    @include btn_size(11px 24px, 14px, 16px);
+  }
+
+  @mixin btn_variant($background-color,
+    $border-color,
+    $color,
+    $hover-background-color,
+    $border ) {
+    background: inherit;
+    background-color: $background-color;
+    border-color: $border-color;
+    color: $color;
+    border: $border;
+
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+
+  &.btn_variant.outlined-orange {
+    @include btn_variant($white, $orange, $orange, $light-orange, auto);
+  }
+
+  &.btn_variant.outlined-grey {
+    @include btn_variant($white, $dark-grey, $dark-grey, $light-grey-bg, auto);
+  }
+
+  &.btn_variant.text-dark-blue {
+    @include btn_variant(inherit, none, $dark-green, inherit, none);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.btn_full_width {
+    width: 100%;
+  }
+}
