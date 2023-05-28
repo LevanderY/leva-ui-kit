@@ -1,5 +1,5 @@
-import MyButton from "./MyButton/MyButton";
+import { Button } from "../src/components";
 
 export {
-    MyButton,
+  Button,
 }
