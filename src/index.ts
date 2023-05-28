@@ -1,5 +1,7 @@
-import MyButton from "./MyButton/MyButton";
+import { Button, Input, CheckBox } from "../src/components";
 
 export {
-    MyButton,
+  Button,
+  Input,
+  CheckBox,
 }

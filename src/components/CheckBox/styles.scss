@@ -1,0 +1,77 @@
+@import "../../styles/global.scss";
+
+.checkbox_container {
+  .input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    transition: all 150ms ease-out 0s;
+    background-color: $white;
+    color: $input-border-color;
+    border: 2px solid $input-border-color;
+    border-radius: 3px;
+  }
+
+  &:hover .input~.checkmark {
+    cursor: pointer;
+    background-color: $light-grey-bg;
+  }
+
+  .input:checked~.checkmark {
+    background-color: $check_box_color;
+    background-color: $white  !important;
+    border: 2px solid $check_box_color;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .input:checked~.checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 8px;
+    height: 13px;
+    border: solid $check_box_color;
+    border-radius: 2px;
+  }
+
+  &.variant.check {
+    .checkmark:after {
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  &.variant.line {
+    .checkmark:after {
+      top: 2px;
+      height: 12px;
+      width: 5px;
+      left: 6px;
+      width: 4px;
+      border-radius: 0;
+      border-width: 0 3px 0px 0;
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  }
+}
