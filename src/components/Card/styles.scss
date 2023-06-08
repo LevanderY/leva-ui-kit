@@ -13,7 +13,7 @@
     }
 
     &.card_size.xs {
-        @include card_size(230px, 120px);
+        @include card_size(200px, 100px);
     }
 
     &.card_size.sm {
