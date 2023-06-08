@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default {
-  title: 'Forms Control/CheckBox',
+  title: 'LevaUiKit/CheckBox',
   component: CheckBox,
 } as ComponentMeta<typeof CheckBox> as Props;
 

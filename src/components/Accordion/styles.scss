@@ -1,0 +1,87 @@
+@import "../../styles/global.scss";
+
+@mixin display-flex($justify: null, $align: null, $wrap: null, $direction: null, $grow: null, $gap: null) {
+    display: flex;
+
+    @if $justify {
+        justify-content: $justify;
+    }
+
+    @if $align {
+        align-items: $align;
+    }
+
+    @if $wrap {
+        flex-wrap: $wrap;
+    }
+
+    @if $direction {
+        flex-direction: $direction;
+    }
+
+    @if $grow {
+        flex-grow: $grow;
+    }
+
+    @if $gap {
+        gap: $gap;
+    }
+}
+
+.accordion_container {
+    .MuiPaper-root {
+        border-bottom: 1px solid $input-border-color;
+        border-radius: 0 !important;
+        box-shadow: none;
+    }
+
+    .label {
+        font-size: 14px;
+        font-weight: bold;
+        transition: color 0.15s;
+        color: $input-color;
+        margin-left: 12px;
+    }
+
+    .accordion_content {
+        width: 100%;
+        @include display-flex($justify: space-between, $align: center);
+
+        .action_button_content {
+            @include display-flex($align: center);
+        }
+    }
+
+    .MuiAccordionSummary-root {
+        min-height: 54px;
+        flex-direction: row-reverse;
+    }
+
+    .action_type_dropdown_icon {
+        color: $border-value-border-color;
+        margin-left: 3px;
+    }
+
+    .MuiAccordionSummary-expandIconWrapper {
+        color: $accordion-icon-color;
+        transform: rotate(-90deg);
+
+        svg {
+            width: 18px;
+        }
+
+        &.Mui-expanded {
+            transform: rotate(0deg);
+        }
+    }
+
+    .MuiAccordionSummary-content {
+        margin: 5px 0;
+    }
+
+    &:hover {
+        .label {
+            color: $select-label-color;
+        }
+    }
+}

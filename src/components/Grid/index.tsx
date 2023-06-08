@@ -9,6 +9,9 @@ export interface ItemProps {
   xs: number;
   md: number;
   children: string;
+  style?: {
+    [key: string]: string
+  }
 }
 
 const Grid: React.FC<GridProps> = ({ children, spacing = 2 }) => {
@@ -27,16 +30,18 @@ const Grid: React.FC<GridProps> = ({ children, spacing = 2 }) => {
 };
 
 
-const Item: React.FC<ItemProps> = ({ xs, md, children }) => {
+const Item: React.FC<ItemProps> = ({ xs, md, children, style }) => {
   const itemStyle = {
-    flexBasis: `${(xs / 12) * 100}%`, 
+    flexBasis: `${(xs / 12) * 100}%`,
     '@media (min-width: 768px)': {
-      flexBasis: `${(md / 12) * 100}%`, 
+      flexBasis: `${(md / 12) * 100}%`,
     },
   };
 
+  const allStyles = { ...itemStyle, ...style };
+
   return (
-    <div style={itemStyle}>
+    <div style={allStyles}>
       {children}
     </div>
   );

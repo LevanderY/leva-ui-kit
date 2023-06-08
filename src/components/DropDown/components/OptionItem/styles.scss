@@ -1,0 +1,80 @@
+@import "../../../../styles/global.scss";
+
+@mixin display-flex($justify: null, $align: null, $wrap: null, $direction: null, $grow: null, $gap: null) {
+  display: flex;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $grow {
+    flex-grow: $grow;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+.option_item {
+  @include display-flex($direction: column);
+
+  list-style-type: none;
+  padding: 8px 0;
+  cursor: pointer;
+  color: $input-color;
+
+  .title_option_box {
+    @include display-flex($align: center);
+
+    .title_option_container {
+      @include display-flex($align: center);
+      padding: 0 20px;
+
+      .title_option {
+        font-weight: 300;
+        font-size: 14px;
+      }
+
+      .icon_option {
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  .subtitle_option {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    color: $grey-hover;
+    margin-top: 10px;
+  }
+
+  &:hover {
+    background-color: $select-label-hover-color;
+  }
+}
+
+.option_item.active {
+  background-color: $select-label-hover-color;
+}
+
+.option_item.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}

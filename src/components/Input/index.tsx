@@ -77,7 +77,6 @@ const Input: FC<Props> = ({
             [`icon_input_box ${iconOptions.position}`]: iconOptions.position,
             [`with_label`]: label,
           })}>
-          {/* <iconOptions.icon /> */}
           {iconOptions.icon}
         </div>
       )}

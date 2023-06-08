@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default {
-  title: 'Forms Control/Input',
+  title: 'LevaUiKit/Input',
   component: Input,
 } as ComponentMeta<typeof Input> as Props;
 
@@ -37,7 +37,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   label: 'Region/State',
-  variant: 'line',
+  variant: 'standard',
   name: 'Custom',
   value: 'Lviv',
   type: 'text',

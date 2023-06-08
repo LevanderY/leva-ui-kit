@@ -1,0 +1,306 @@
+@import "../../styles/global.scss";
+
+@mixin size($padding, $font-size, $line-height, $font-weight: normal, $size: auto) {
+  padding: $padding;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  width: $size;
+  height: $size;
+}
+
+
+@mixin radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin display-flex($justify: null, $align: null, $wrap: null, $direction: null, $grow: null, $gap: null) {
+  display: flex;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $grow {
+    flex-grow: $grow;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin font-style($size: null,
+  $bold: null,
+  $color: null,
+  $align: null,
+  $lineHeight: null,
+  $transform: null,
+  $spacing: null,
+  $verticalAlign: null,
+  $family: null,
+  $decoration: null,
+  $fill: null) {
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $bold {
+    font-weight: $bold;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $align {
+    text-align: $align;
+  }
+
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+
+  @if $transform {
+    text-transform: $transform;
+  }
+
+  @if $spacing {
+    letter-spacing: $spacing;
+  }
+
+  @if $verticalAlign {
+    vertical-align: $verticalAlign;
+  }
+
+  @if $family {
+    font-family: $family;
+  }
+
+  @if $decoration {
+    text-decoration: $decoration;
+  }
+
+  @if $fill {
+    fill: $fill;
+  }
+}
+
+
+.custom_select_box {
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  max-height: 76px;
+
+  .select_header {
+    cursor: pointer;
+
+    .select_close_icon {
+      display: none;
+    }
+
+    &.header_variant.line {
+      @include font-style($size: 14px, $bold: 300);
+      @include display-flex($align: end);
+      width: 100%;
+      width: 100%;
+      height: 45px;
+      color: $input-color;
+      border: 1px;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+
+      .select_arrow_icon {
+        display: none;
+        color: $select_arrow_icon-color;
+        margin-bottom: -1px;
+      }
+
+      .select_label {
+        @include font-style($size: 12px, $bold: 400);
+        color: $grey-hover;
+        transition: top 0.2s ease-out 0.1ms;
+        position: absolute;
+        top: 12px;
+        left: 0;
+      }
+
+      &.has_value {
+        .select_label {
+          top: 0;
+        }
+
+        .select_arrow_icon {
+          display: block;
+        }
+      }
+
+      &:hover {
+        border-bottom: 1px solid $dark-green;
+
+        .select_label {
+          top: 0;
+        }
+
+        .select_arrow_icon {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .select_header.text {
+    @include display-flex($align: center);
+    @include font-style($size: 14px, $bold: 500);
+    height: 40px;
+    max-width: 160px;
+    padding: 0 12px;
+    transition: all 0.15s ease-out;
+    color: $select-label-color;
+
+    .tooltip_select_container {
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .select_arrow_icon {
+      color: $border-value-border-color;
+    }
+
+    &.has_value {
+      background-color: $select-label-hover-color;
+
+      .select_close_icon {
+        display: block;
+        width: 16px;
+        height: 16px;
+        color: $border-value-border-color;
+      }
+    }
+
+    &:hover {
+      color: $select-label-color;
+    }
+  }
+
+  .select_contained_input_label_disabled {
+    display: none;
+  }
+
+  .select_contained_input_label_enabled {
+    @include font-style($size: 14px, $bold: 500);
+    color: $input-color;
+  }
+
+  .select_header.contained {
+    @include display-flex($justify: space-between, $align: center);
+    padding: 0 12px;
+    margin-top: 10px;
+    min-height: 40px;
+
+    border-radius: 3px;
+    border: 1px solid $input-border-color;
+    transition: all 0.15s ease-out;
+    background-color: $input-bg-color;
+    color: $input-color;
+
+    .select_arrow_icon {
+      color: $select_arrow_icon-color;
+    }
+
+    .select_label {
+      display: none;
+    }
+
+    .select_contained_input_label {
+      @include font-style($size: 12px, $bold: 400);
+      display: block;
+      color: $grey-hover;
+    }
+
+    .select_value {
+      font-weight: 300;
+    }
+
+    .selected_values_container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px 0;
+
+      .select_value {
+        @include display-flex($align: center);
+        font-size: 13px;
+        background-color: $side-bar-footer-bg-color;
+        border: 1px solid $border-value-border-color;
+        color: $input-color;
+        padding: 3px 8px;
+        font-weight: 400 !important;
+        margin: 2px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .select_value_close_icon {
+        font-size: 13px;
+        margin-left: 5px;
+      }
+    }
+
+    &.has_value {
+      .select_label {
+        display: none;
+      }
+    }
+  }
+
+  .select_header {
+    min-width: auto;
+
+    &.header_variant.outlined {
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: all .15s ease-out;
+      color: $dark-green;
+      text-decoration: none;
+      -webkit-user-select: inherit;
+      -moz-user-select: inherit;
+      -ms-user-select: inherit;
+      user-select: inherit;
+      display: flex;
+      align-items: center;
+      height: auto;
+      max-width: 160px;
+      transition: all 0.15s ease-out;
+      color: $dark-green;
+      font-size: 14px;
+
+      .select_arrow_icon {
+        width: 18px;
+        height: 18px;
+        color: $border-value-border-color;
+      }
+
+      .select_label {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "../../styles/global.scss";
+
+.custom_tooltip {
+  z-index: 1;
+}
+
+.popper_wrapper_container {
+  border-radius: 3px;
+
+  &.popper_bg_color.grey {
+    background-color: $grey-bg;
+  }
+
+  &.popper_bg_color.orange {
+    background-color: $orange-bg;
+  }
+
+  &.popper_bg_color.white {
+    background-color: $white-bg;
+    border: 1px solid $wrapper-border-color;
+  }
+
+  &.popper_size.xs {
+    padding: 5px;
+  }
+
+  &.popper_size.sm {
+    padding: 10px;  
+  }
+
+  &.popper_size.md {
+    padding: 20px;
+  }
+}

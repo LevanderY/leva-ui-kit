@@ -1,0 +1,132 @@
+@import "../../styles/global.scss";
+
+@mixin display-flex($justify: null, $align: null, $wrap: null, $direction: null, $grow: null, $gap: null) {
+  display: flex;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $grow {
+    flex-grow: $grow;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+.popper_select_container.popper_wrapper_container {
+  margin-top: 6px;
+  padding: 0 !important;
+  box-shadow: 0 1px 24px 0 rgba(0, 0, 0, 0.08);
+
+
+  &.popper_select_size.large {
+    min-width: 300px;
+  }
+
+  &.popper_select_size.medium {
+    min-width: 250px;
+  }
+
+  &.popper_select_size.small {
+    min-width: 200px;
+  }
+
+  &.popper_select_size.extra-small {
+    min-width: 150px;
+  }
+
+  .options_box {
+    .options_header {
+      background-color: $light-grey-bg;
+      padding: 8px;
+
+      .search_input {
+        input {
+          background-color: $white;
+          height: 40px !important;
+          border-color: $input-box-shadow-color !important;
+          box-shadow: 0 1px 24px 0 rgba(0, 0, 0, 0.08) $input-border-hover-color;
+          outline: 0;
+          border-radius: 3px;
+
+          &::placeholder {
+            color: $dropdown-placeholder-color !important;
+          }
+        }
+      }
+
+      .search_dropdown_icon {
+        color: $select_arrow_icon-color;
+      }
+
+      .close_search_icon {
+        color: $border-value-border-color;
+        cursor: pointer;
+      }
+    }
+
+    .options_list_items {
+      padding: 0;
+      margin: 0;
+
+      &.has_checkbox {
+        .title_option_box {
+          height: 20px;
+          @include display-flex($align: 'center');
+
+          .title_option_container {
+            @include display-flex($align: 'center');
+            padding: 0 20px;
+
+            .title_option {
+              font-size: 14px;
+              font-weight: bold;
+            }
+
+            .icon_option {
+              margin: 0;
+              padding: 0;
+              padding-left: 0px;
+              padding-right: 8px;
+
+              svg {
+                width: 15px;
+                height: 15px;
+              }
+            }
+          }
+
+          .title_option_checkbox_container {
+            position: relative;
+            margin-left: 20px;
+            height: 20px;
+            padding-right: 15px;
+          }
+        }
+
+        .subtitle_option {
+          font-size: 12px;
+          font-weight: 300;
+          padding: 0 55px;
+          color: $grey-hover;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

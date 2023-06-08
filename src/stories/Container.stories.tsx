@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import { Container, ContainerProps } from '../components/Container/index';
 
 export default {
-  title: 'MyApp/Container',
+  title: 'LevaUiKit/Container',
   component: Container,
   argTypes: {
     maxWidth: {
@@ -15,7 +15,7 @@ export default {
 
 const Template: Story<ContainerProps> = (args) => (
   <Container {...args}>
-    <div style={{height: '100px', backgroundColor: 'lightblue'}}>
+    <div style={{ height: '100px', backgroundColor: 'lightblue' }}>
       Content goes here
     </div>
   </Container>
