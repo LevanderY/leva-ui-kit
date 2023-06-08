@@ -9,10 +9,12 @@
     "build-storybook": "build-storybook"
   },
   "keywords": [],
-  "author": "utimur",
+  "author": "levader",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
@@ -40,8 +42,6 @@
     "dist"
   ],
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.4",
     "@mui/x-data-grid": "^6.6.0",

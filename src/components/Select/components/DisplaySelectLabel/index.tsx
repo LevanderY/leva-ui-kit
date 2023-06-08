@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import { TStyleVariantSelect } from '../../types';
 import { IOption } from '../../../../types/types';

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { FC, memo } from 'react';
 import { ClickAwayListener, Popper } from '@mui/material';
 import { IStyles } from '../../types/types';

@@ -1,7 +1,7 @@
+//@ts-nocheck
 import React, { FC, ReactNode, useState, MouseEvent } from 'react';
 import { Accordion as MuiAccordion, AccordionDetails, AccordionSummary } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { ExpandMore, ArrowDropDown } from '@mui/icons-material';
 import Button from '../Button';
 import { IAccordionData, TypeActionButton } from './types';
 
@@ -18,12 +18,12 @@ const Accordion: FC<Props> = ({ data, children }: Props): JSX.Element => {
   const handleChange = (): void => setExpanded(!expanded);
 
   const checkButtonActionType = (type: TypeActionButton): JSX.Element | string =>
-    type === 'dropdown-button' && <ArrowDropDownIcon className={'action_type_dropdown_icon'} />;
+    type === 'dropdown-button' && <ArrowDropDown className={'action_type_dropdown_icon'} />;
 
   return (
     <div className={'accordion_container'} key={`${data.id}_${data.label}`}>
       <MuiAccordion expanded={expanded} onChange={handleChange} disableGutters>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <AccordionSummary expandIcon={<ExpandMore />}>
           <div className={'accordion_content'}>
             <p className={'label'}>{data.label}</p>
             {data.actions && (

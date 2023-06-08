@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { FC, MouseEvent, useState } from 'react';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { CalendarMonth } from '@mui/icons-material';
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import Button from '../Button';
@@ -36,7 +36,7 @@ const DatePicker: FC<Props> = ({ selectedValue, setSelectedValue }: Props): JSX.
         onClick={onOpenDatePickerHandler}
         value={selectedValue && format(selectedValue, 'MM/dd/yyyy')}
         iconOptions={{
-          icon: <CalendarMonthIcon className={'day_picker_icon_input'} />,
+          icon: <CalendarMonth className={'day_picker_icon_input'} />,
           position: 'left',
         }}
       />

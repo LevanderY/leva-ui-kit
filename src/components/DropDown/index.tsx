@@ -1,8 +1,7 @@
 import React, { FC, useState, ChangeEvent, Dispatch, SetStateAction, MouseEvent } from 'react';
 import classNames from 'classnames';
 import { OptionItem, DisplayCheckBox } from './components';
-import SearchIcon from '@mui/icons-material/Search';
-import CloseIcon from '@mui/icons-material/Close';
+import { Search, Close } from '@mui/icons-material';
 import Input from '../Input';
 import PopperWrapper from '../PopperWrapper';
 import { getNewSelectedValue } from './helpers';
@@ -72,9 +71,9 @@ const DropDown: FC<Props> = ({
 
   const displaySearchCloseButton = (value: boolean): JSX.Element =>
     value ? (
-      <CloseIcon onClick={onResetSearchValues} className={'close_search_icon'} />
+      <Close onClick={onResetSearchValues} className={'close_search_icon'} />
     ) : (
-      <SearchIcon className={'search_dropdown_icon'} />
+      <Search className={'search_dropdown_icon'} />
     );
 
   return (

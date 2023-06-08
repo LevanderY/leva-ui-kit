@@ -1,5 +1,5 @@
-import { MouseEvent } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
+import React, { MouseEvent } from 'react';
+import { Close } from '@mui/icons-material';
 import { TStyleVariantSelect } from './types';
 import { IOption } from '../../types/types';
 
@@ -7,7 +7,7 @@ export const displaySelectedValue = (
   value: IOption | IOption[],
   variant: TStyleVariantSelect,
   onRemoveSelectedItem: (e: MouseEvent<SVGSVGElement, globalThis.MouseEvent>, id: string) => void,
-): JSX.Element => {
+) => {
   const isArray = Array.isArray(value);
   const hasValue = isArray ? value.length : value.titleOption.length;
 
@@ -21,7 +21,7 @@ export const displaySelectedValue = (
         {value.map(({ id, titleOption }: IOption) => (
           <span key={id} className={'select_value'}>
             {titleOption}
-            <CloseIcon
+            <Close
               className={'select_value_close_icon'}
               onClick={(e: MouseEvent<SVGSVGElement, globalThis.MouseEvent>) => onRemoveSelectedItem(e, id)}
             />

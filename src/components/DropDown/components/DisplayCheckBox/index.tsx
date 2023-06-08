@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { FC } from 'react';
 import { Divider } from '@mui/material';
 import classNames from 'classnames';

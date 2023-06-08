@@ -1,9 +1,8 @@
-//@ts-nocheck
-import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import React from 'react';
+import { KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight } from '@mui/icons-material';
 
 export const displayIconButton = (isOpenDrawer: boolean, position: 'left' | 'right'): JSX.Element => {
-  const iconLeft = isOpenDrawer ? <KeyboardDoubleArrowLeftIcon /> : <KeyboardDoubleArrowRightIcon />;
-  const iconRight = isOpenDrawer ? <KeyboardDoubleArrowRightIcon /> : <KeyboardDoubleArrowLeftIcon />;
+  const iconLeft = isOpenDrawer ? <KeyboardDoubleArrowLeft /> : <KeyboardDoubleArrowRight />;
+  const iconRight = isOpenDrawer ? <KeyboardDoubleArrowRight /> : <KeyboardDoubleArrowLeft />;
   return position === 'left' ? iconLeft : iconRight;
 };

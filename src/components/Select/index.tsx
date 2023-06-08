@@ -1,6 +1,6 @@
 import React, { FC, MouseEvent, useState } from 'react';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import CloseIcon from '@mui/icons-material/Close';
+import { ArrowDropDown } from '@mui/icons-material';
+import { Close } from '@mui/icons-material';
 import classNames from 'classnames';
 import { DisplaySelectLabel } from './components';
 import { displaySelectedValue, checkSelectHeaderValueClass } from './helpers';
@@ -74,8 +74,8 @@ const Select: FC<Props> = ({
         onClick={onOpenSelectHandler}>
         <DisplaySelectLabel variant={variant} label={label} values={selectedValue} />
         {displaySelectedValue(selectedValue, variant, onRemoveSelectedItem)}
-        <ArrowDropDownIcon className={'select_arrow_icon'} />
-        <CloseIcon className={'select_close_icon'} onClick={onResetSelectTextHandler} />
+        <ArrowDropDown className={'select_arrow_icon'} />
+        <Close className={'select_close_icon'} onClick={onResetSelectTextHandler} />
       </div>
       <DropDown
         position={position}
