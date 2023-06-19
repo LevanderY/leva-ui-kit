@@ -1,0 +1,79 @@
+@import "../../styles/global.scss";
+
+.collapsed_side_bar_container {
+	position: relative;
+
+	.side_bar_drawer {
+		min-width: 20px;
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		min-height: 100vh;
+		overflow: hidden;
+		padding: 0;
+		z-index: 1;
+		background-color: #158de4;
+
+		&.position.left {
+			border-right: 1px solid $wrapper-border-color;
+		}
+
+		&.position.right {
+			border-left: 1px solid $wrapper-border-color;
+		}
+	}
+
+	.collapsed_button {
+		position: absolute;
+		top: 32px;
+		z-index: 2;
+
+		padding: 0 !important;
+		margin: 0 !important;
+		width: 32px !important;
+		height: 32px !important;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 100%;
+
+		svg {
+			margin-top: 4px;
+			margin-right: 2px;
+		}
+
+		&.right {
+			right: 12px;
+		}
+
+		&.left {
+			left: 12px;
+		}
+	}
+
+	.content_container {
+		display: none;
+	}
+
+	&.has_collapsed {
+		.side_bar_drawer {
+			min-width: 350px;
+		}
+
+		.content_container {
+			display: block;
+		}
+
+		.collapsed_button {
+			&.right {
+				right: 343px;
+			}
+
+			&.left {
+				left: 343px;
+			}
+		}
+	}
+}

@@ -1,0 +1,158 @@
+@import "../../styles/global.scss";
+
+@mixin display-flex($justify: null, $align: null, $wrap: null, $direction: null, $grow: null, $gap: null) {
+  display: flex;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $grow {
+    flex-grow: $grow;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin font-style($size: null,
+  $bold: null,
+  $color: null,
+  $align: null,
+  $lineHeight: null,
+  $transform: null,
+  $spacing: null,
+  $verticalAlign: null,
+  $family: null,
+  $decoration: null,
+  $fill: null) {
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $bold {
+    font-weight: $bold;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $align {
+    text-align: $align;
+  }
+
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+
+  @if $transform {
+    text-transform: $transform;
+  }
+
+  @if $spacing {
+    letter-spacing: $spacing;
+  }
+
+  @if $verticalAlign {
+    vertical-align: $verticalAlign;
+  }
+
+  @if $family {
+    font-family: $family;
+  }
+
+  @if $decoration {
+    text-decoration: $decoration;
+  }
+
+  @if $fill {
+    fill: $fill;
+  }
+}
+
+
+
+.date_picker_popper {
+  padding: 0 !important;
+}
+
+.day_picker_icon_input {
+  width: 19px !important;
+  margin-left: 1px;
+  padding-bottom: 2px;
+}
+
+.date_picker_container {
+  @include font-style($size: 14px, $bold: 400);
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid $input-bg-color;
+  color: $input-color !important;
+
+  // global picker styles
+  .rdp {
+    --rdp-cell-size: 35px;
+    --rdp-accent-color: #0092af !important;
+  }
+
+  // header arrow
+  .rdp-caption {
+    button {
+      color: $select_arrow_icon-color;
+    }
+  }
+
+  // headers title
+  .rdp-caption_label {
+    color: $date-label-color;
+  }
+
+  // headers title mounts
+  .rdp-head_cell {
+    padding: 7px 0px;
+    color: $grey-hover;
+    font-weight: bold;
+  }
+
+  // content days cell
+  .rdp-cell {
+    .rdp-day {
+      border-radius: 5px;
+    }
+  }
+
+  // current day
+  .rdp-day_today:not(.rdp-day_outside) {
+    color: $selected-date-color;
+    font-weight: 600;
+  }
+
+  // current day selected
+  .rdp-day_selected.rdp-day_today {
+    color: $white;
+  }
+
+  // footer picker
+  .footer {
+    @include display-flex($justify: space-around);
+
+    .footer_button {
+      margin-top: 5px;
+      padding: 5px 35px !important;
+    }
+  }
+}

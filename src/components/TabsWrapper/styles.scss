@@ -1,0 +1,92 @@
+@import "../../styles/global.scss";
+
+.tabs_wrapper_container {
+  .tabs_container.line {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: $input-border-color;
+      bottom: 4%;
+      z-index: 1;
+    }
+
+    .MuiTab-root {
+      padding: 12px 20px;
+      font-weight: 400;
+      font-size: 14px;
+      color: $input-color;
+      text-transform: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $border-value-border-color;
+      }
+    }
+
+    .MuiTabs-indicator {
+      transition: none;
+      height: 4px;
+      z-index: 2;
+      border-radius: 5px;
+      background-color: $input-color;
+    }
+
+    .MuiTab-root.Mui-selected {
+      font-weight: bold;
+
+      &:hover {
+        color: $input-color;
+      }
+    }
+  }
+
+  .tabs_container.contained {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: $input-border-color;
+      bottom: 1%;
+      z-index: 1;
+    }
+
+    .MuiTab-root {
+      padding: 12px 28px;
+      text-transform: none;
+      background-color: $light-grey-bg;
+      transition: color 0.3s;
+      border-top: 1px solid $input-border-color;
+      border-left: 1px solid $input-border-color;
+
+      &:nth-last-child(1) {
+        border-right: 1px solid $input-border-color;
+      }
+
+      &:hover {
+        color: $border-value-border-color;
+      }
+    }
+
+    .MuiTabs-indicator {
+      display: none;
+    }
+
+    .MuiTab-root.Mui-selected {
+      color: $input-color;
+      font-weight: bold;
+      background-color: $side-bar-footer-bg-color;
+      z-index: 2;
+
+      &:hover {
+        color: $input-color;
+      }
+    }
+  }
+}

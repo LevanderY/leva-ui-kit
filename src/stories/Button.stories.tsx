@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from "../components/Button";
 
 export default {
-  title: 'Forms Control/Button',
+  title: 'LevaUiKit/Button',
   component: Button,
 } as ComponentMeta<typeof Button>;
 

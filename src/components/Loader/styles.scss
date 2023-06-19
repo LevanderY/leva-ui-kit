@@ -1,0 +1,41 @@
+@import "../../styles/global.scss";
+
+.loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+
+    &:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid;
+        animation: loader 1.2s linear infinite;
+    }
+
+    &.loader_color_orange:after {
+        border-color: $orange transparent $orange transparent;
+    }
+
+    &.loader_color_green:after {
+        border-color: $dark-green transparent $dark-green transparent;
+    }
+
+    &.loader_color_grey:after {
+        border-color: $dark-grey transparent $dark-grey transparent;
+    }
+}
+
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

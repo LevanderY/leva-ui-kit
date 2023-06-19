@@ -13,7 +13,10 @@ module.exports = {
 		extensions: ['.ts', '.tsx']
 	},
 	externals: {
-		react: 'react'
+		react: 'react',
+		'@mui/material': '@mui/material',
+		'@mui/x-data-grid': '@mui/x-data-grid',
+		'@mui/icons-material': '@mui/icons-material'
 	},
 	module: {
 		rules: [

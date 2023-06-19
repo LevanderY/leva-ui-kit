@@ -1,0 +1,56 @@
+@import "../../styles/global.scss";
+
+.card {
+    border: 1px solid $light-grey-bg;
+    border-radius: 8px;
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+
+    @mixin card_size($width, $height) {
+        width: $width;
+        height: $height;
+    }
+
+    &.card_size.xs {
+        @include card_size(200px, 100px);
+    }
+
+    &.card_size.sm {
+        @include card_size(250px, 170px);
+    }
+
+    &.card_size.md {
+        @include card_size(400px, 200px);
+    }
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .title {
+        border-bottom: 1px solid $light-grey-bg;
+
+        @mixin title_size($font-size, $padding) {
+            font-size: $font-size;
+            padding: $padding;
+        }
+
+        &.title_size.xs {
+            @include title_size(18px, 8px 10px)
+        }
+
+        &.title_size.sm {
+            @include title_size(20px, 10px 16px)
+        }
+
+        &.title_size.md {
+            @include title_size(26px, 10px 16px)
+        }
+    }
+
+    .content {
+        font-size: 16px;
+        padding: 16px 10px;
+    }
+}

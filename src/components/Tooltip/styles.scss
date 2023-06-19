@@ -1,0 +1,165 @@
+@import "../../styles/global.scss";
+
+@mixin size($padding, $font-size, $line-height, $font-weight: normal, $size: auto) {
+  padding: $padding;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  width: $size;
+  height: $size;
+}
+
+
+@mixin display-flex($justify: null, $align: null, $wrap: null, $direction: null, $grow: null, $gap: null) {
+  display: flex;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $grow {
+    flex-grow: $grow;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin font-style($size: null,
+  $bold: null,
+  $color: null,
+  $align: null,
+  $lineHeight: null,
+  $transform: null,
+  $spacing: null,
+  $verticalAlign: null,
+  $family: null,
+  $decoration: null,
+  $fill: null) {
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $bold {
+    font-weight: $bold;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $align {
+    text-align: $align;
+  }
+
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+
+  @if $transform {
+    text-transform: $transform;
+  }
+
+  @if $spacing {
+    letter-spacing: $spacing;
+  }
+
+  @if $verticalAlign {
+    vertical-align: $verticalAlign;
+  }
+
+  @if $family {
+    font-family: $family;
+  }
+
+  @if $decoration {
+    text-decoration: $decoration;
+  }
+
+  @if $fill {
+    fill: $fill;
+  }
+}
+
+
+.tooltip_text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@mixin tooltip_text_color($color) {
+  color: $color;
+}
+
+@mixin tooltip_cloud($background_color) {
+  background-color: $background_color;
+}
+
+@mixin tooltip_arrow($color) {
+  &::before {
+    background-color: $color;
+  }
+}
+
+.tooltip_text_color.dark-blue {
+  @include tooltip_text_color($dark-green);
+  background-color: inherit;
+}
+
+.tooltip_text_color.white {
+  @include tooltip_text_color($white);
+}
+
+.tooltip_text_color.dark {
+  @include tooltip_text_color($dark);
+}
+
+
+.tooltip_cloud.xs {
+  @include size(10px, 12px, auto, auto, auto);
+}
+
+.tooltip_cloud.sm {
+  @include size(12px, 14px, auto, auto, auto);
+}
+
+.tooltip_cloud.md {
+  @include size(16px, 16px, auto, auto, auto);
+}
+
+.tooltip_cloud.orange {
+  @include tooltip_cloud($orange-bg);
+}
+
+.tooltip_cloud.grey {
+  @include tooltip_cloud($grey-bg);
+}
+
+.tooltip_cloud.white {
+  @include tooltip_cloud($light-grey-bg);
+}
+
+.tooltip_arrow.orange {
+  @include tooltip_arrow($orange-bg);
+}
+
+.tooltip_arrow.grey {
+  @include tooltip_arrow($grey-bg);
+}
+
+.tooltip_arrow.white {
+  @include tooltip_arrow($light-grey-bg);
+}

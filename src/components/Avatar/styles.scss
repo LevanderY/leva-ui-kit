@@ -1,0 +1,86 @@
+@import "../../styles/global.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .avatar {
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 3px solid;
+
+        @mixin avatar_size($width, $height) {
+            width: $width;
+            height: $height;
+        }
+
+        &.avatar_size.xs {
+            @include avatar_size(50px, 50px);
+        }
+
+        &.avatar_size.sm {
+            @include avatar_size(100px, 100px);
+        }
+
+        &.avatar_size.md {
+            @include avatar_size(150px, 150px);
+        }
+
+        @mixin avatar_color($color) {
+            border-color: $color;
+        }
+
+        &.avatar_color.orange {
+            @include avatar_color($orange);
+        }
+
+        &.avatar_color.green {
+            @include avatar_color($dark-green);
+        }
+
+        &.avatar_color.grey {
+            @include avatar_color($dark-grey);
+        }
+    }
+
+    .info {
+        @mixin info_size($size) {
+            font-size: $size
+        }
+
+        &.info_size.xs {
+            @include info_size(12px);
+        }
+
+        &.info_size.sm {
+            @include info_size(16px);
+        }
+
+        &.info_size.md {
+            @include info_size(24px);
+        }
+
+        @mixin info_color($color) {
+            color: $color;
+        }
+
+        &.info_color.orange {
+            @include info_color($orange);
+        }
+
+        &.info_color.green {
+            @include info_color($dark-green);
+        }
+
+        &.info_color.grey {
+            @include info_color($dark-grey);
+        }
+
+    }
+
+}
